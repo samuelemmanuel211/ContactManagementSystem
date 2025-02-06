@@ -50,7 +50,14 @@ public class ContactManager extends JFrame {
     }
 
     public void createContactListPanel(){
+        contactListPanel = new JPanel(new BorderLayout());
+        styleCardPanel(contactListPanel);
 
+        JLabel header = new JLabel("CONTACT LIST VIEW", SwingConstants.CENTER);
+        styleHeaderLabel(header);
+        contactListPanel.add(header, BorderLayout.NORTH);
+
+        
     }
 
 
