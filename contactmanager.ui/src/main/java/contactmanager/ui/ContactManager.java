@@ -100,5 +100,11 @@ public class ContactManager extends JFrame {
 
     }
 
+    private void refreshContactListPanel(JPanel listContainer) {
+        listContainer.removeAll();
+
+
+    }
+
 
 }
