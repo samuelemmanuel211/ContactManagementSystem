@@ -231,6 +231,12 @@ public class ContactManager extends JFrame {
         styleDetailLabel(detailNameLabel);
         styleDetailLabel(detailPhoneLabel);
         styleDetailLabel(detailEmailLabel);
+
+        detailContainer.add(detailNameLabel);
+        detailContainer.add(Box.createVerticalStrut(10));
+        detailContainer.add(detailPhoneLabel);
+        detailContainer.add(Box.createVerticalStrut(10));
+        detailContainer.add(detailEmailLabel);
     }
 
 }
