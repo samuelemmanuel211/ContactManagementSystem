@@ -77,6 +77,22 @@ public class ContactManager extends JFrame {
             selectedContactIndex = -1; // Indicate new contact
             cardLayout.show(mainPanel, "CONTACT_FORM");
         });
+
+        JButton viewDetailBtn = new JButton("View Detail");
+        styleButton(viewDetailBtn);
+        viewDetailBtn.addActionListener(e -> {
+            if (selectedContactIndex >= 0 && selectedContactIndex < contacts.size()) {
+                showContactDetails(selectedContactIndex);
+                cardLayout.show(mainPanel, "CONTACT_DETAILS");
+            } else {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "Please select a contact by clicking on its name first.",
+                        "No Contact Selected",
+                        JOptionPane.WARNING_MESSAGE
+                );
+            }
+        });
     }
 
 
