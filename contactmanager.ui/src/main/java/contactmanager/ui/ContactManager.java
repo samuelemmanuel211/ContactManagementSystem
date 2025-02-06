@@ -2,6 +2,8 @@ package contactmanager.ui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 public class ContactManager extends JFrame {
@@ -111,6 +113,32 @@ public class ContactManager extends JFrame {
             rowPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
             // Store the row's index for later reference.
             rowPanel.putClientProperty("index", i);
+
+            // Create a unified mouse adapter for hover and click.
+            MouseAdapter adapter = new MouseAdapter() {
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    // Only change to hover color if this row is not selected.
+                    if (!isRowSelected(rowPanel)) {
+                        rowPanel.setBackground(new Color(210, 210, 210));
+                    }
+                }
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    if (!isRowSelected(rowPanel)) {
+                        rowPanel.setBackground(new Color(230, 230, 230));
+                    }
+                }
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    // Set this row as selected and update all row colors.
+                    Integer idx = (Integer) rowPanel.getClientProperty("index");
+                    selectedContactIndex = (idx != null ? idx : -1);
+                    updateRowPanelColors(listContainer);
+                }
+            };
+            addHoverListenerRecursively(rowPanel, adapter);
+
         }
 
 
