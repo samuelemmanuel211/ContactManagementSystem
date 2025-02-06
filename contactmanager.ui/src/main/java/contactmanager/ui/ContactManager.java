@@ -257,4 +257,12 @@ public class ContactManager extends JFrame {
         contactDetailPanel.add(bottomPanel, BorderLayout.SOUTH);
     }
 
+    private void showContactDetails(int index) {
+        if (index < 0 || index >= contacts.size()) return;
+        Contact c = contacts.get(index);
+        detailNameLabel.setText("Name: " + c.getName());
+        detailPhoneLabel.setText("Telephone Number: " + c.getPhone());
+        detailEmailLabel.setText("Email Address: " + c.getEmail());
+    }
+
 }
