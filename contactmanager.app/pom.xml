@@ -10,10 +10,6 @@
     </parent>
 
     <artifactId>contactmanager.app</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>src</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>23</maven.compiler.source>
