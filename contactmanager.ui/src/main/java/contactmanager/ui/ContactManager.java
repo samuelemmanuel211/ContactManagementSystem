@@ -193,7 +193,7 @@ public class ContactManager extends JFrame {
                     refreshContactListPanel(listContainer);
                 }
             });
-            
+
             rowPanel.add(nameLabel);
             rowPanel.add(editButton);
             rowPanel.add(deleteButton);
@@ -203,7 +203,8 @@ public class ContactManager extends JFrame {
             listContainer.add(Box.createVerticalStrut(10));
 
         }
-
+        listContainer.revalidate();
+        listContainer.repaint();
 
     }
 }
