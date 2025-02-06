@@ -368,4 +368,12 @@ public class ContactManager extends JFrame {
         label.setForeground(Color.BLACK);
     }
 
+    private void styleButton(JButton button) {
+        button.setBackground(new Color(70, 130, 180)); // SteelBlue
+        button.setForeground(Color.WHITE);
+        button.setFocusPainted(false);
+        button.setFont(new Font("Arial", Font.BOLD, 13));
+        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
+    }
+
 }
