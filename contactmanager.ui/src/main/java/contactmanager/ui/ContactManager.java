@@ -363,4 +363,9 @@ public class ContactManager extends JFrame {
         label.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
     }
 
+    private void styleDetailLabel(JLabel label) {
+        label.setFont(new Font("Arial", Font.PLAIN, 14));
+        label.setForeground(Color.BLACK);
+    }
+
 }
