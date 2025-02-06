@@ -193,6 +193,14 @@ public class ContactManager extends JFrame {
                     refreshContactListPanel(listContainer);
                 }
             });
+            
+            rowPanel.add(nameLabel);
+            rowPanel.add(editButton);
+            rowPanel.add(deleteButton);
+            rowPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, rowPanel.getPreferredSize().height));
+            listContainer.add(rowPanel);
+            // Add a 10px vertical gap after each row.
+            listContainer.add(Box.createVerticalStrut(10));
 
         }
 
