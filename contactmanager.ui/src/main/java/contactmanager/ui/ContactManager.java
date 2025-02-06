@@ -224,6 +224,13 @@ public class ContactManager extends JFrame {
         detailContainer.setLayout(new BoxLayout(detailContainer, BoxLayout.Y_AXIS));
         detailContainer.setBackground(new Color(230, 230, 230));
         detailContainer.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+        detailNameLabel  = new JLabel("Name: ");
+        detailPhoneLabel = new JLabel("Telephone Number: ");
+        detailEmailLabel = new JLabel("Email Address: ");
+        styleDetailLabel(detailNameLabel);
+        styleDetailLabel(detailPhoneLabel);
+        styleDetailLabel(detailEmailLabel);
     }
 
 }
