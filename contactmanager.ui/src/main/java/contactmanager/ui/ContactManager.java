@@ -28,7 +28,13 @@ public class ContactManager extends JFrame {
 
     public ContactManager() {
 
-        
+        super("Contact Management System");
+
+        contacts = new ArrayList<>();
+
+        cardLayout = new CardLayout();
+        mainPanel = new JPanel(cardLayout);
+        mainPanel.setBackground(new Color(240, 240, 240));
 
     }
 }
