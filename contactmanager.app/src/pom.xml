@@ -5,15 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>Contact_Management_System</artifactId>
+        <artifactId>contactmanager.app</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>contactmanager.app</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>src</module>
-    </modules>
+    <artifactId>src</artifactId>
 
     <properties>
         <maven.compiler.source>23</maven.compiler.source>
