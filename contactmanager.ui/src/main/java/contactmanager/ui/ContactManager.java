@@ -355,4 +355,12 @@ public class ContactManager extends JFrame {
         );
     }
 
+    private void styleHeaderLabel(JLabel label) {
+        label.setOpaque(true);
+        label.setBackground(new Color(70, 130, 180)); // SteelBlue
+        label.setForeground(Color.WHITE);
+        label.setFont(new Font("Arial", Font.BOLD, 16));
+        label.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
+    }
+
 }
