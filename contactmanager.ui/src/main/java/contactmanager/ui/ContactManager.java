@@ -36,5 +36,10 @@ public class ContactManager extends JFrame {
         mainPanel = new JPanel(cardLayout);
         mainPanel.setBackground(new Color(240, 240, 240));
 
+
     }
+
+public void createContactListPanel(){
+        
+}
 }
