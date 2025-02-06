@@ -155,6 +155,19 @@ public class ContactManager extends JFrame {
                 }
             });
 
+            // Edit button
+            JButton editButton = new JButton("Edit");
+            styleButton(editButton);
+            int finalI1 = i;
+            editButton.addActionListener(e -> {
+                selectedContactIndex = finalI1;
+                formNameField.setText(contact.getName());
+                formPhoneField.setText(contact.getPhone());
+                formEmailField.setText(contact.getEmail());
+                cardLayout.show(mainPanel, "CONTACT_FORM");
+                updateRowPanelColors(listContainer);
+            });
+
         }
 
 
