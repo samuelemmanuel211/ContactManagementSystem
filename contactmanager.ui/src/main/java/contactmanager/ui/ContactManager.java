@@ -49,5 +49,9 @@ public class ContactManager extends JFrame {
         setVisible(true);
     }
 
+    public void createContactListPanel(){
+
+    }
+
 
 }
