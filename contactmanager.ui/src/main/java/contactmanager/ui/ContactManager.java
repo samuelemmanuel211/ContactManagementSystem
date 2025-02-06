@@ -338,6 +338,11 @@ public class ContactManager extends JFrame {
         bottomPanel.add(cancelBtn);
         contactFormPanel.add(bottomPanel, BorderLayout.SOUTH);
     }
+
+    private void clearFormFields() {
+        formNameField.setText("");
+        formPhoneField.setText("");
+        formEmailField.setText("");
     }
 
 }
