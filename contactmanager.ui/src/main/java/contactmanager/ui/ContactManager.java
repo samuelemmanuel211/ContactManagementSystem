@@ -237,6 +237,8 @@ public class ContactManager extends JFrame {
         detailContainer.add(detailPhoneLabel);
         detailContainer.add(Box.createVerticalStrut(10));
         detailContainer.add(detailEmailLabel);
+
+        contactDetailPanel.add(detailContainer, BorderLayout.CENTER);
     }
 
 }
