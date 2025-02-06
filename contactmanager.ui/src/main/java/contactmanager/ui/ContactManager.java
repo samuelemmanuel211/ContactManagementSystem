@@ -239,6 +239,22 @@ public class ContactManager extends JFrame {
         detailContainer.add(detailEmailLabel);
 
         contactDetailPanel.add(detailContainer, BorderLayout.CENTER);
+
+        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        bottomPanel.setBackground(new Color(240, 240, 240));
+
+        JButton backBtn = new JButton("Back To List");
+        styleButton(backBtn);
+        backBtn.addActionListener(e -> cardLayout.show(mainPanel, "CONTACT_LIST"));
+
+        JButton listViewBtn = new JButton("Contact List View");
+        styleButton(listViewBtn);
+        listViewBtn.addActionListener(e -> cardLayout.show(mainPanel, "CONTACT_LIST"));
+
+        bottomPanel.add(backBtn);
+        bottomPanel.add(listViewBtn);
+
+        contactDetailPanel.add(bottomPanel, BorderLayout.SOUTH);
     }
 
 }
