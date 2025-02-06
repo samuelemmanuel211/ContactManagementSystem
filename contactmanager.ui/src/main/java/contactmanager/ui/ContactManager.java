@@ -123,12 +123,14 @@ public class ContactManager extends JFrame {
                         rowPanel.setBackground(new Color(210, 210, 210));
                     }
                 }
+
                 @Override
                 public void mouseExited(MouseEvent e) {
                     if (!isRowSelected(rowPanel)) {
                         rowPanel.setBackground(new Color(230, 230, 230));
                     }
                 }
+
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     // Set this row as selected and update all row colors.
@@ -139,10 +141,22 @@ public class ContactManager extends JFrame {
             };
             addHoverListenerRecursively(rowPanel, adapter);
 
+            // Contact name label
+            JLabel nameLabel = new JLabel(contact.getName());
+            nameLabel.setPreferredSize(new Dimension(100, 20));
+            nameLabel.setForeground(Color.BLACK);
+            nameLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            // Clicking the label also selects the row.
+            nameLabel.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    selectedContactIndex = contacts.indexOf(contact);
+                    updateRowPanelColors(listContainer);
+                }
+            });
+
         }
 
 
     }
-
-
 }
