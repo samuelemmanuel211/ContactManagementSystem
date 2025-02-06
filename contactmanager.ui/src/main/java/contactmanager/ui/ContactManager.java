@@ -57,7 +57,9 @@ public class ContactManager extends JFrame {
         styleHeaderLabel(header);
         contactListPanel.add(header, BorderLayout.NORTH);
 
-        
+        JPanel listContainer = new JPanel();
+        listContainer.setLayout(new BoxLayout(listContainer, BoxLayout.Y_AXIS));
+        listContainer.setBackground(new Color(230, 230, 230));
     }
 
 
