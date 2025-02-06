@@ -168,6 +168,32 @@ public class ContactManager extends JFrame {
                 updateRowPanelColors(listContainer);
             });
 
+            // Delete button (red) with confirmation dialog
+
+            JButton deleteButton = new JButton("Delete");
+            deleteButton.setBackground(Color.RED);
+            deleteButton.setForeground(Color.WHITE);
+            deleteButton.setFocusPainted(false);
+            deleteButton.setFont(new Font("Arial", Font.BOLD, 13));
+            deleteButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+            int finalI = i;
+            deleteButton.addActionListener(e -> {
+                int result = JOptionPane.showConfirmDialog(
+                        ContactManager.this,
+                        "Are you sure you want to delete this record?",
+                        "Confirm Delete",
+                        JOptionPane.YES_NO_OPTION
+                );
+                if (result == JOptionPane.YES_OPTION) {
+                    contacts.remove(finalI);
+                    // If the deleted row was selected, reset selection.
+                    if(finalI == selectedContactIndex) {
+                        selectedContactIndex = -1;
+                    }
+                    refreshContactListPanel(listContainer);
+                }
+            });
+
         }
 
 
