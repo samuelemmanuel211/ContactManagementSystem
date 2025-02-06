@@ -69,6 +69,14 @@ public class ContactManager extends JFrame {
 
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
         bottomPanel.setBackground(new Color(240, 240, 240));
+
+        JButton addNewContactBtn = new JButton("Add New Contact");
+        styleButton(addNewContactBtn);
+        addNewContactBtn.addActionListener(e -> {
+            clearFormFields();
+            selectedContactIndex = -1; // Indicate new contact
+            cardLayout.show(mainPanel, "CONTACT_FORM");
+        });
     }
 
 
