@@ -216,6 +216,9 @@ public class ContactManager extends JFrame {
         contactDetailPanel = new JPanel(new BorderLayout());
         styleCardPanel(contactDetailPanel);
 
+        JLabel header = new JLabel("CONTACT DETAILS VIEW", SwingConstants.CENTER);
+        styleHeaderLabel(header);
+        contactDetailPanel.add(header, BorderLayout.NORTH);
     }
 
 }
