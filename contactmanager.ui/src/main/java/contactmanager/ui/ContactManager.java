@@ -212,6 +212,8 @@ public class ContactManager extends JFrame {
         Integer idx = (Integer) rowPanel.getClientProperty("index");
         return (idx != null && idx == selectedContactIndex);
     }
+    private void createContactDetailPanel(){
 
+    }
 
 }
