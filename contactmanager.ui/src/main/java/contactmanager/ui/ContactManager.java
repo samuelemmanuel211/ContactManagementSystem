@@ -25,5 +25,10 @@ public class ContactManager extends JFrame {
     private JLabel detailPhoneLabel;
     private JLabel detailEmailLabel;
 
-    
+
+    public ContactManager() {
+
+        
+
+    }
 }
