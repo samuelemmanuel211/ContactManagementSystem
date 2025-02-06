@@ -1,4 +1,6 @@
 package contactmanager.ui;
 
-public class ContactManager {
+import javax.swing.*;
+
+public class ContactManager extends JFrame {
 }
