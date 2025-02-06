@@ -296,6 +296,48 @@ public class ContactManager extends JFrame {
         formPanel.add(formEmailField);
 
         contactFormPanel.add(formPanel, BorderLayout.CENTER);
+
+        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        bottomPanel.setBackground(new Color(240, 240, 240));
+
+        JButton saveBtn = new JButton("Save Contact");
+        styleButton(saveBtn);
+        saveBtn.addActionListener(e -> {
+            String name  = formNameField.getText().trim();
+            String phone = formPhoneField.getText().trim();
+            String email = formEmailField.getText().trim();
+
+            if (name.isEmpty() || phone.isEmpty() || email.isEmpty()) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "All fields must be filled out before saving.",
+                        "Validation Error",
+                        JOptionPane.ERROR_MESSAGE
+                );
+                return;
+            }
+
+            if (selectedContactIndex == -1) {
+                contacts.add(new Contact(name, phone, email));
+            } else {
+                Contact c = contacts.get(selectedContactIndex);
+                c.setName(name);
+                c.setPhone(phone);
+                c.setEmail(email);
+            }
+
+            cardLayout.show(mainPanel, "CONTACT_LIST");
+            refreshContactListPanel((JPanel)((JScrollPane)contactListPanel.getComponent(1)).getViewport().getView());
+        });
+
+        JButton cancelBtn = new JButton("Cancel");
+        styleButton(cancelBtn);
+        cancelBtn.addActionListener(e -> cardLayout.show(mainPanel, "CONTACT_LIST"));
+
+        bottomPanel.add(saveBtn);
+        bottomPanel.add(cancelBtn);
+        contactFormPanel.add(bottomPanel, BorderLayout.SOUTH);
+    }
     }
 
 }
