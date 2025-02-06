@@ -219,6 +219,11 @@ public class ContactManager extends JFrame {
         JLabel header = new JLabel("CONTACT DETAILS VIEW", SwingConstants.CENTER);
         styleHeaderLabel(header);
         contactDetailPanel.add(header, BorderLayout.NORTH);
+
+        JPanel detailContainer = new JPanel();
+        detailContainer.setLayout(new BoxLayout(detailContainer, BoxLayout.Y_AXIS));
+        detailContainer.setBackground(new Color(230, 230, 230));
+        detailContainer.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
     }
 
 }
