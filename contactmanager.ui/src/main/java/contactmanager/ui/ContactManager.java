@@ -103,6 +103,11 @@ public class ContactManager extends JFrame {
     private void refreshContactListPanel(JPanel listContainer) {
         listContainer.removeAll();
 
+        for (int i = 0; i < contacts.size(); i++) {
+            Contact contact = contacts.get(i);
+            
+        }
+
 
     }
 
