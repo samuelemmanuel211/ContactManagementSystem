@@ -265,4 +265,8 @@ public class ContactManager extends JFrame {
         detailEmailLabel.setText("Email Address: " + c.getEmail());
     }
 
+    private void createContactFormPanel(){
+        
+    }
+
 }
