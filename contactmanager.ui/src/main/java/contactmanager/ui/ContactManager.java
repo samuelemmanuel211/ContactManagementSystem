@@ -207,4 +207,11 @@ public class ContactManager extends JFrame {
         listContainer.repaint();
 
     }
+
+    private boolean isRowSelected(JPanel rowPanel) {
+        Integer idx = (Integer) rowPanel.getClientProperty("index");
+        return (idx != null && idx == selectedContactIndex);
+    }
+
+
 }
