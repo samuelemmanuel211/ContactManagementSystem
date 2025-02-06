@@ -345,4 +345,14 @@ public class ContactManager extends JFrame {
         formEmailField.setText("");
     }
 
+    private void styleCardPanel(JPanel panel) {
+        panel.setBackground(new Color(240, 240, 240));
+        panel.setBorder(
+                BorderFactory.createCompoundBorder(
+                        BorderFactory.createLineBorder(new Color(180, 180, 180), 2),
+                        BorderFactory.createEmptyBorder(10, 10, 10, 10)
+                )
+        );
+    }
+
 }
