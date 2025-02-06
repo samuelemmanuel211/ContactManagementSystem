@@ -213,6 +213,8 @@ public class ContactManager extends JFrame {
         return (idx != null && idx == selectedContactIndex);
     }
     private void createContactDetailPanel(){
+        contactDetailPanel = new JPanel(new BorderLayout());
+        styleCardPanel(contactDetailPanel);
 
     }
 
