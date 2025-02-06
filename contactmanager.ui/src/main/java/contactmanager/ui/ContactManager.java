@@ -60,6 +60,10 @@ public class ContactManager extends JFrame {
         JPanel listContainer = new JPanel();
         listContainer.setLayout(new BoxLayout(listContainer, BoxLayout.Y_AXIS));
         listContainer.setBackground(new Color(230, 230, 230));
+
+        JScrollPane scrollPane = new JScrollPane(listContainer);
+        scrollPane.setBorder(BorderFactory.createEmptyBorder());
+        contactListPanel.add(scrollPane, BorderLayout.CENTER);
     }
 
 
