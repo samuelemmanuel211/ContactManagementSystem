@@ -49,7 +49,7 @@ public class ContactManager extends JFrame {
         setVisible(true);
     }
 
-    public void createContactListPanel(){
+    public void createContactListPanel() {
         contactListPanel = new JPanel(new BorderLayout());
         styleCardPanel(contactListPanel);
 
@@ -93,6 +93,11 @@ public class ContactManager extends JFrame {
                 );
             }
         });
+
+        bottomPanel.add(addNewContactBtn);
+        bottomPanel.add(viewDetailBtn);
+        contactListPanel.add(bottomPanel, BorderLayout.SOUTH);
+
     }
 
 
