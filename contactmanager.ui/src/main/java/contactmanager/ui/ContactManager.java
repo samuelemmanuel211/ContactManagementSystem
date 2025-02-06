@@ -266,7 +266,36 @@ public class ContactManager extends JFrame {
     }
 
     private void createContactFormPanel(){
-        
+        contactFormPanel = new JPanel(new BorderLayout());
+        styleCardPanel(contactFormPanel);
+
+        JLabel header = new JLabel("CONTACT CREATION FORM", SwingConstants.CENTER);
+        styleHeaderLabel(header);
+        contactFormPanel.add(header, BorderLayout.NORTH);
+
+        JPanel formPanel = new JPanel(new GridLayout(3, 2, 10, 10));
+        formPanel.setBackground(new Color(230, 230, 230));
+        formPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+
+        JLabel nameLabel = new JLabel("Name:");
+        styleDetailLabel(nameLabel);
+        formNameField = new JTextField();
+        formPanel.add(nameLabel);
+        formPanel.add(formNameField);
+
+        JLabel phoneLabel = new JLabel("Tel No:");
+        styleDetailLabel(phoneLabel);
+        formPhoneField = new JTextField();
+        formPanel.add(phoneLabel);
+        formPanel.add(formPhoneField);
+
+        JLabel emailLabel = new JLabel("Email:");
+        styleDetailLabel(emailLabel);
+        formEmailField = new JTextField();
+        formPanel.add(emailLabel);
+        formPanel.add(formEmailField);
+
+        contactFormPanel.add(formPanel, BorderLayout.CENTER);
     }
 
 }
