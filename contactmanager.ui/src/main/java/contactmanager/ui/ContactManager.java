@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class ContactManager extends JFrame {
 
+    //instance variable refactored out
     private CardLayout cardLayout;
     private JPanel mainPanel;
 
@@ -32,7 +33,7 @@ public class ContactManager extends JFrame {
 
     public ContactManager() {
 
-        super("Contact Management System");
+        setTitle("Contact Management System");
 
         contacts = new ArrayList<>();
 
