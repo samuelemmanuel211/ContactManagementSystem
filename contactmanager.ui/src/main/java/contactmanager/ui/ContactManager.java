@@ -261,6 +261,16 @@ public class ContactManager extends JFrame {
         contactDetailPanel.add(bottomPanel, BorderLayout.SOUTH);
     }
 
+    private void addHoverListenerRecursively(Component comp, MouseAdapter listener) {
+        comp.addMouseListener(listener);
+        comp.addMouseMotionListener(listener);
+        if (comp instanceof Container) {
+            for (Component child : ((Container) comp).getComponents()) {
+                addHoverListenerRecursively(child, listener);
+            }
+        }
+    }
+
     private void showContactDetails(int index) {
         if (index < 0 || index >= contacts.size()) return;
         Contact c = contacts.get(index);
