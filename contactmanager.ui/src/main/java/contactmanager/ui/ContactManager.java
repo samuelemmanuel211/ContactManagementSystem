@@ -352,6 +352,7 @@ public class ContactManager extends JFrame {
             String phone = formPhoneField.getText().trim();
             String email = formEmailField.getText().trim();
 
+            //function to check all the fills whether are empty
             if (name.isEmpty() || phone.isEmpty() || email.isEmpty()) {
                 JOptionPane.showMessageDialog(
                         this,
