@@ -1,5 +1,7 @@
 package contactmanager.ui;
 
+import contactmanager.model.Contact;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -102,6 +104,8 @@ public class ContactManager extends JFrame {
 
     }
 
+
+
     private void refreshContactListPanel(JPanel listContainer) {
         listContainer.removeAll();
 
@@ -155,6 +159,7 @@ public class ContactManager extends JFrame {
                 }
             });
 
+
             // Edit button
             JButton editButton = new JButton("Edit");
             styleButton(editButton);
@@ -206,6 +211,32 @@ public class ContactManager extends JFrame {
         listContainer.revalidate();
         listContainer.repaint();
 
+    }
+    private void addHoverListenerRecursively(Component comp, MouseAdapter listener) {
+        comp.addMouseListener(listener);
+        comp.addMouseMotionListener(listener);
+        if (comp instanceof Container) {
+            for (Component child : ((Container) comp).getComponents()) {
+                addHoverListenerRecursively(child, listener);
+            }
+        }
+    }
+
+    //method for updating row panel
+    private void updateRowPanelColors(JPanel listContainer) {
+        Component[] comps = listContainer.getComponents();
+        for (Component comp : comps) {
+            if (comp instanceof JPanel) {
+                JPanel row = (JPanel) comp;
+                Integer idx = (Integer) row.getClientProperty("index");
+                if (idx != null && idx == selectedContactIndex) {
+                    row.setBackground(new Color(180, 180, 180));
+                } else {
+                    row.setBackground(new Color(230, 230, 230));
+                }
+            }
+        }
+        listContainer.repaint();
     }
 
     private boolean isRowSelected(JPanel rowPanel) {
