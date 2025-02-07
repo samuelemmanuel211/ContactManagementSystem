@@ -65,7 +65,7 @@ public class ContactManager extends JFrame {
         contactListPanel = new JPanel(new BorderLayout());
         styleCardPanel(contactListPanel);
 
-        JLabel header = new JLabel("CONTACT LIST VIEW", SwingConstants.CENTER);
+        JLabel header = new JLabel("CONTACT LIST VIEW", JLabel.CENTER);
         styleHeaderLabel(header);
         contactListPanel.add(header, BorderLayout.NORTH);
 
