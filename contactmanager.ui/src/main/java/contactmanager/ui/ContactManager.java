@@ -309,6 +309,7 @@ public class ContactManager extends JFrame {
         detailEmailLabel.setText("Email Address: " + c.getEmail());
     }
 
+  //Here we create contact form panel
     private void createContactFormPanel(){
         contactFormPanel = new JPanel(new BorderLayout());
         styleCardPanel(contactFormPanel);
