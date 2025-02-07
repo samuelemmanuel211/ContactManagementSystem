@@ -128,20 +128,6 @@ public class ContactManager extends JFrame {
 
             // Create a unified mouse adapter for hover and click.
             MouseAdapter adapter = new MouseAdapter() {
-                @Override
-                public void mouseEntered(MouseEvent e) {
-                    // Only change to hover color if this row is not selected.
-                    if (!isRowSelected(rowPanel)) {
-                        rowPanel.setBackground(new Color(210, 210, 210));
-                    }
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-                    if (!isRowSelected(rowPanel)) {
-                        rowPanel.setBackground(new Color(230, 230, 230));
-                    }
-                }
 
                 @Override
                 public void mouseClicked(MouseEvent e) {
@@ -151,8 +137,7 @@ public class ContactManager extends JFrame {
                     updateRowPanelColors(listContainer);
                 }
             };
-            addHoverListenerRecursively(rowPanel, adapter);
-
+            
             // Contact name label
             JLabel nameLabel = new JLabel(contact.getName());
             nameLabel.setPreferredSize(new Dimension(100, 20));
@@ -291,15 +276,7 @@ public class ContactManager extends JFrame {
         contactDetailPanel.add(bottomPanel, BorderLayout.SOUTH);
     }
 
-    private void addHoverListenerRecursively(Component comp, MouseAdapter listener) {
-        comp.addMouseListener(listener);
-        comp.addMouseMotionListener(listener);
-        if (comp instanceof Container) {
-            for (Component child : ((Container) comp).getComponents()) {
-                addHoverListenerRecursively(child, listener);
-            }
-        }
-    }
+
 //Method to show Contact Details
     private void showContactDetails(int index) {
         if (index < 0 || index >= contacts.size())
