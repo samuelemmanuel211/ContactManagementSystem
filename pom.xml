@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
     <modules>
 
-        <module>contactmanager.model</module>
+
         <module>contactmanager.ui</module>
         <module>contactmanager.app</module>
     </modules>
