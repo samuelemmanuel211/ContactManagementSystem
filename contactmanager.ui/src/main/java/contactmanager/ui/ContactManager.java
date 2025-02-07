@@ -45,6 +45,10 @@ public class ContactManager extends JFrame {
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(mainPanel, BorderLayout.CENTER);
 
+        createContactListPanel();
+        createContactDetailPanel();
+        createContactFormPanel();
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(550, 450);
         setLocationRelativeTo(null);
