@@ -170,9 +170,10 @@ public class ContactManager extends JFrame {
                 formPhoneField.setText(contact.getPhone());
                 formEmailField.setText(contact.getEmail());
                 cardLayout.show(mainPanel, "CONTACT_FORM");
+                updateRowPanelColors(listContainer);
             });
 
-            // Delete button with confirmation dialog
+            // Delete button  with confirmation dialog
 
             JButton deleteButton = new JButton("Delete");
             deleteButton.setBackground(Color.RED);
@@ -230,10 +231,6 @@ public class ContactManager extends JFrame {
         listContainer.repaint();
     }
 
-    private boolean isRowSelected(JPanel rowPanel) {
-        Integer idx = (Integer) rowPanel.getClientProperty("index");
-        return (idx != null && idx == selectedContactIndex);
-    }
 
 //Here we're creating Contact Detail panel
 
@@ -298,7 +295,7 @@ public class ContactManager extends JFrame {
         contactFormPanel = new JPanel(new BorderLayout());
         styleCardPanel(contactFormPanel);
 
-        JLabel header = new JLabel("CONTACT CREATION FORM", SwingConstants.CENTER);
+        JLabel header = new JLabel("CONTACT CREATION FORM", JLabel.CENTER);
         styleHeaderLabel(header);
         contactFormPanel.add(header, BorderLayout.NORTH);
 
@@ -379,8 +376,8 @@ public class ContactManager extends JFrame {
         panel.setBackground(new Color(240, 240, 240));
         panel.setBorder(
                 BorderFactory.createCompoundBorder(
-                        BorderFactory.createLineBorder(new Color(180, 180, 180), 2),
-                        BorderFactory.createEmptyBorder(10, 10, 10, 10)
+                        BorderFactory.createLineBorder(new Color(180, 180, 180), 10),
+                        BorderFactory.createEmptyBorder(5, 5, 5, 5)
                 )
         );
     }
@@ -394,7 +391,7 @@ public class ContactManager extends JFrame {
     }
 
     private void styleDetailLabel(JLabel label) {
-        label.setFont(new Font("Arial", Font.BOLD, 18));
+        label.setFont(new Font("Arial", Font.PLAIN, 16));
         label.setForeground(Color.BLACK);
     }
 
