@@ -411,7 +411,7 @@ public class ContactManager extends JFrame {
     }
 
     private void styleDetailLabel(JLabel label) {
-        label.setFont(new Font("Arial", Font.PLAIN, 14));
+        label.setFont(new Font("Arial", Font.BOLD, 18));
         label.setForeground(Color.BLACK);
     }
 
