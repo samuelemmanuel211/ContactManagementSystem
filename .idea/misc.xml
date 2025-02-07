@@ -10,7 +10,6 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/contactmanage.ui/pom.xml" />
-        <option value="$PROJECT_DIR$/contactmanager.model/pom.xml" />
       </set>
     </option>
   </component>
