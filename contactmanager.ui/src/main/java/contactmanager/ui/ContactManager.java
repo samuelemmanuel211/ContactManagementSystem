@@ -140,7 +140,8 @@ public class ContactManager extends JFrame {
             
             // Contact name label
             JLabel nameLabel = new JLabel(contact.getName());
-            nameLabel.setPreferredSize(new Dimension(100, 20));
+            nameLabel.setPreferredSize(new Dimension(200, 10));
+            nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
             nameLabel.setForeground(Color.BLACK);
             nameLabel.setCursor(new Cursor(Cursor.HAND_CURSOR));
             // Clicking the label also selects the row.
