@@ -244,7 +244,7 @@ public class ContactManager extends JFrame {
     }
 
 //Here we're creating Contact Detail panel
-    
+
     private void createContactDetailPanel(){
         contactDetailPanel = new JPanel(new BorderLayout());
         styleCardPanel(contactDetailPanel);
@@ -299,9 +299,10 @@ public class ContactManager extends JFrame {
             }
         }
     }
-
+//Method to show Contact Details
     private void showContactDetails(int index) {
-        if (index < 0 || index >= contacts.size()) return;
+        if (index < 0 || index >= contacts.size())
+            return;
         Contact c = contacts.get(index);
         detailNameLabel.setText("Name: " + c.getName());
         detailPhoneLabel.setText("Telephone Number: " + c.getPhone());
