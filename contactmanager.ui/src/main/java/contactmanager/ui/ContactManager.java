@@ -45,6 +45,10 @@ public class ContactManager extends JFrame {
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(mainPanel, BorderLayout.CENTER);
 
+        createContactListPanel();
+        createContactDetailPanel();
+        createContactFormPanel();
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(550, 450);
         setLocationRelativeTo(null);
@@ -212,6 +216,23 @@ public class ContactManager extends JFrame {
         Integer idx = (Integer) rowPanel.getClientProperty("index");
         return (idx != null && idx == selectedContactIndex);
     }
+
+    private void updateRowPanelColors(JPanel listContainer) {
+        Component[] comps = listContainer.getComponents();
+        for (Component comp : comps) {
+            if (comp instanceof JPanel) {
+                JPanel row = (JPanel) comp;
+                Integer idx = (Integer) row.getClientProperty("index");
+                if (idx != null && idx == selectedContactIndex) {
+                    row.setBackground(new Color(180, 180, 180));
+                } else {
+                    row.setBackground(new Color(230, 230, 230));
+                }
+            }
+        }
+        listContainer.repaint();
+    }
+
     private void createContactDetailPanel(){
         contactDetailPanel = new JPanel(new BorderLayout());
         styleCardPanel(contactDetailPanel);
@@ -255,6 +276,16 @@ public class ContactManager extends JFrame {
         bottomPanel.add(listViewBtn);
 
         contactDetailPanel.add(bottomPanel, BorderLayout.SOUTH);
+    }
+
+    private void addHoverListenerRecursively(Component comp, MouseAdapter listener) {
+        comp.addMouseListener(listener);
+        comp.addMouseMotionListener(listener);
+        if (comp instanceof Container) {
+            for (Component child : ((Container) comp).getComponents()) {
+                addHoverListenerRecursively(child, listener);
+            }
+        }
     }
 
     private void showContactDetails(int index) {
