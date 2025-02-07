@@ -301,7 +301,7 @@ public class ContactManager extends JFrame {
 
         JPanel formPanel = new JPanel(new GridLayout(3, 2, 10, 10));
         formPanel.setBackground(new Color(230, 230, 230));
-        formPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        formPanel.setBorder(BorderFactory.createEmptyBorder(20, 40, 20, 20));
 
         JLabel nameLabel = new JLabel("Name:");
         styleDetailLabel(nameLabel);
