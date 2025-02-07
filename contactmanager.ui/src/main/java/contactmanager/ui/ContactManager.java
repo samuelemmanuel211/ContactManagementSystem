@@ -140,7 +140,7 @@ public class ContactManager extends JFrame {
                     // Update the colors of all rows to reflect the selection
                     updateRowPanelColors(listContainer);
                 }
-                
+
             };
 
             // Contact name label
@@ -170,10 +170,9 @@ public class ContactManager extends JFrame {
                 formPhoneField.setText(contact.getPhone());
                 formEmailField.setText(contact.getEmail());
                 cardLayout.show(mainPanel, "CONTACT_FORM");
-                updateRowPanelColors(listContainer);
             });
 
-            // Delete button (red) with confirmation dialog
+            // Delete button with confirmation dialog
 
             JButton deleteButton = new JButton("Delete");
             deleteButton.setBackground(Color.RED);
