@@ -59,6 +59,7 @@ public class ContactManager extends JFrame {
         setVisible(true);
     }
 
+    //Here were are creating contact list panel
     public void createContactListPanel() {
         contactListPanel = new JPanel(new BorderLayout());
         styleCardPanel(contactListPanel);
@@ -111,7 +112,7 @@ public class ContactManager extends JFrame {
     }
 
 
-
+//Here is Refreshing contact list panel
     private void refreshContactListPanel(JPanel listContainer) {
         listContainer.removeAll();
 
@@ -242,7 +243,8 @@ public class ContactManager extends JFrame {
         return (idx != null && idx == selectedContactIndex);
     }
 
-
+//Here we're creating Contact Detail panel
+    
     private void createContactDetailPanel(){
         contactDetailPanel = new JPanel(new BorderLayout());
         styleCardPanel(contactDetailPanel);
