@@ -36,9 +36,14 @@ public class ContactManager extends JFrame {
 
         contacts = new ArrayList<>();
 
+        /*preparing Card layout and main panel*/
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
         mainPanel.setBackground(new Color(240, 240, 240));
+
+        createContactListPanel();
+        createContactDetailPanel();
+        createContactFormPanel();
 
         mainPanel.add(contactListPanel, "CONTACT_LIST");
         mainPanel.add(contactDetailPanel, "CONTACT_DETAILS");
@@ -47,9 +52,6 @@ public class ContactManager extends JFrame {
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(mainPanel, BorderLayout.CENTER);
 
-        createContactListPanel();
-        createContactDetailPanel();
-        createContactFormPanel();
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(550, 450);
@@ -216,15 +218,7 @@ public class ContactManager extends JFrame {
         listContainer.repaint();
 
     }
-    private void addHoverListenerRecursively(Component comp, MouseAdapter listener) {
-        comp.addMouseListener(listener);
-        comp.addMouseMotionListener(listener);
-        if (comp instanceof Container) {
-            for (Component child : ((Container) comp).getComponents()) {
-                addHoverListenerRecursively(child, listener);
-            }
-        }
-    }
+
 
     //method for updating row panel
     private void updateRowPanelColors(JPanel listContainer) {
@@ -247,7 +241,7 @@ public class ContactManager extends JFrame {
         Integer idx = (Integer) rowPanel.getClientProperty("index");
         return (idx != null && idx == selectedContactIndex);
     }
-    
+
 
     private void createContactDetailPanel(){
         contactDetailPanel = new JPanel(new BorderLayout());
