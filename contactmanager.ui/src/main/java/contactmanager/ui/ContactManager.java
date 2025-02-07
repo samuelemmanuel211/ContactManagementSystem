@@ -131,13 +131,18 @@ public class ContactManager extends JFrame {
 
                 @Override
                 public void mouseClicked(MouseEvent e) {
-                    // Set this row as selected and update all row colors.
-                    Integer idx = (Integer) rowPanel.getClientProperty("index");
-                    selectedContactIndex = (idx != null ? idx : -1);
+                    // Get the index of the clicked row (stored as a client property)
+                    Integer rowIndex = (Integer) rowPanel.getClientProperty("index");
+
+                    // Set the selected contact index to the row's index, or -1 if no index found
+                    selectedContactIndex = (rowIndex != null) ? rowIndex : -1;
+
+                    // Update the colors of all rows to reflect the selection
                     updateRowPanelColors(listContainer);
                 }
+                
             };
-            
+
             // Contact name label
             JLabel nameLabel = new JLabel(contact.getName());
             nameLabel.setPreferredSize(new Dimension(250, 20));
